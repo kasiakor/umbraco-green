@@ -9,5 +9,10 @@ namespace NewGood
         {
             return PartialView("~/Views/Partials/SiteLayout/_Header.cshtml");
         }
+
+        public ActionResult RenderFooter()
+        {
+            return PartialView("~/Views/Partials/SiteLayout/_Footer.cshtml");
+        }
     }
 }
