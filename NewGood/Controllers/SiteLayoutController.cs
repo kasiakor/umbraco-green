@@ -3,7 +3,7 @@ using Umbraco.Web.Mvc;
 
 namespace NewGood
 {
-    public class SiteLayoutController  :  SurfaceController
+    public class SiteLayoutController : SurfaceController
     {
         public ActionResult RenderHeader()
         {
