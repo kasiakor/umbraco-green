@@ -19,5 +19,15 @@ namespace NewGood.Controllers
         {
             return PartialView("~/Views/Partials/Home/_Featured.cshtml");
         }
+
+        public ActionResult RenderBlog()
+        {
+            return PartialView("~/Views/Partials/Home/_Blog.cshtml");
+        }
+
+        public ActionResult RenderTestimonials()
+        {
+            return PartialView("~/Views/Partials/Home/_Testimonials.cshtml");
+        }
     }
 }
