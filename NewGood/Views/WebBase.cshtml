@@ -64,25 +64,8 @@
     <div id="fh5co-page">
         @{  Html.RenderAction("RenderHeader" , "SiteLayout");}
         @RenderBody()
-        <div id="fh5co-featured-section">
-            <div class="content">
-                <section class="banner banner-img">
-                    <div class="centered">
-                        <h2 class="banner-heading">Good4you</h2>
-                        <p class="banner-text">What we eat can make a considerable difference to our health. A balanced diet is important for everyone, whatever your age.<br> We are working together to make sure that everybody can enjoy the benefits of eating a healthy diet.</p>
-                    </div><!-- .centered -->
-                </section><!-- .banner -->
-            </div>
-        </div>
-        <div id="fh5co-intro-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2 text-center">
-                        <h2>Welcome to Good4you</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @{  Html.RenderAction("RenderBanner", "Home");}
+        @{  Html.RenderAction("RenderIntro", "Home");}
         @{  Html.RenderAction("RenderFeatured", "Home");}
         <div id="fh5co-blog-section" class="fh5co-grey-bg-section">
             <div class="container">

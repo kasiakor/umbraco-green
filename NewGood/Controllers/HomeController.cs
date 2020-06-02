@@ -5,6 +5,16 @@ namespace NewGood.Controllers
 {
     public class HomeController : SurfaceController
     {
+        public ActionResult RenderBanner()
+        {
+            return PartialView("~/Views/Partials/Home/_Banner.cshtml");
+        }
+
+        public ActionResult RenderIntro()
+        {
+            return PartialView("~/Views/Partials/Home/_Intro.cshtml");
+        }
+
         public ActionResult RenderFeatured()
         {
             return PartialView("~/Views/Partials/Home/_Featured.cshtml");
