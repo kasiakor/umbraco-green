@@ -68,3 +68,35 @@ _shutDownStack=   at System.Environment.GetStackTrace(Exception e, Boolean needF
    at System.Threading.QueueUserWorkItemCallback.System.Threading.IThreadPoolWorkItem.ExecuteWorkItem()
    at System.Threading.ThreadPoolWorkQueue.Dispatch()
    at System.Threading._ThreadPoolWaitCallback.PerformWaitCallback()
+ 2020-06-02 21:41:20,420 [P10692/D3/T60] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.5.4 application starting on LAPTOP-UG81TUKE
+ 2020-06-02 21:41:20,435 [P10692/D3/T60] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2020-06-02 21:41:20,442 [P10692/D3/T60] INFO  Umbraco.Core.PluginManager - Hash determined (took 6ms)
+ 2020-06-02 21:41:20,495 [P10692/D3/T60] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+ 2020-06-02 21:41:20,767 [P10692/D3/T60] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 272ms)
+ 2020-06-02 21:41:20,782 [P10692/D3/T60] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2020-06-02 21:41:20,797 [P10692/D3/T60] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 15ms)
+ 2020-06-02 21:41:20,798 [P10692/D3/T60] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2020-06-02 21:41:20,814 [P10692/D3/T60] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 16ms)
+ 2020-06-02 21:41:20,825 [P10692/D3/T60] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+ 2020-06-02 21:41:20,840 [P10692/D3/T60] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 15ms)
+ 2020-06-02 21:41:20,840 [P10692/D3/T60] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+ 2020-06-02 21:41:20,858 [P10692/D3/T60] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 17ms)
+ 2020-06-02 21:41:20,885 [P10692/D3/T60] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+ 2020-06-02 21:41:20,899 [P10692/D3/T60] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 14ms)
+ 2020-06-02 21:41:20,900 [P10692/D3/T60] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+ 2020-06-02 21:41:20,915 [P10692/D3/T60] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 15ms)
+ 2020-06-02 21:41:21,627 [P10692/D3/T60] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2020-06-02 21:41:21,766 [P10692/D3/T60] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2020-06-02 21:41:21,768 [P10692/D3/T60] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2020-06-02 21:41:21,789 [P10692/D3/T60] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2020-06-02 21:41:21,846 [P10692/D3/T60] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2020-06-02 21:41:21,846 [P10692/D3/T60] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2020-06-02 21:41:21,854 [P10692/D3/T60] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 1489ms)
+ 2020-06-02 21:41:21,967 [P10692/D3/T53] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:50341/umbraco (UmbracoModule request)
+ 2020-06-02 21:41:30,530 [P10692/D3/T53] INFO  umbraco.content - Load Xml from file...
+ 2020-06-02 21:41:30,532 [P10692/D3/T53] INFO  umbraco.content - Loaded Xml from file.
+ 2020-06-02 21:41:31,045 [P10692/D3/T53] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2020-06-02 21:41:31,070 [P10692/D3/T53] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 24ms)
+ 2020-06-02 21:42:30,575 [P10692/D3/T55] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2020-06-01 21:42:30
+ 2020-06-02 21:42:30,632 [P10692/D3/T47] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+ 2020-06-02 21:42:30,652 [P10692/D3/T47] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 0 (took 20ms)
