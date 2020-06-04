@@ -19,7 +19,7 @@ namespace NewGood
         {
             // when renderheader is called it calls GetNavigationModelFromDatabase() method
             List<NavigationListItem> nav = GetNavigationModelFromDatabase();
-            return PartialView("~/Views/Partials/SiteLayout/_Header.cshtml");
+            return PartialView("~/Views/Partials/SiteLayout/_Header.cshtml", nav);
         }
 
         /// <summary>
