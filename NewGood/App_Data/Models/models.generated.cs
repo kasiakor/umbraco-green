@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "f6d8f91c4f2336c5")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "6050a3826ba50b45")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -61,7 +61,7 @@ namespace Umbraco.Web.PublishedContentModels
 
 	/// <summary>Blog</summary>
 	[PublishedContentModel("blog")]
-	public partial class Blog : PublishedContentModel
+	public partial class Blog : PublishedContentModel, ITitleControls
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "blog";
@@ -83,11 +83,20 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
+
+		///<summary>
+		/// Title: Enter the title for the page, if empty the name of the page will be used
+		///</summary>
+		[ImplementPropertyType("title")]
+		public string Title
+		{
+			get { return TitleControls.GetTitle(this); }
+		}
 	}
 
 	/// <summary>Products</summary>
 	[PublishedContentModel("products")]
-	public partial class Products : PublishedContentModel
+	public partial class Products : PublishedContentModel, ITitleControls
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "products";
@@ -109,11 +118,20 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
+
+		///<summary>
+		/// Title: Enter the title for the page, if empty the name of the page will be used
+		///</summary>
+		[ImplementPropertyType("title")]
+		public string Title
+		{
+			get { return TitleControls.GetTitle(this); }
+		}
 	}
 
 	/// <summary>Guide</summary>
 	[PublishedContentModel("guide")]
-	public partial class Guide : PublishedContentModel
+	public partial class Guide : PublishedContentModel, ITitleControls
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "guide";
@@ -134,6 +152,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Guide, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Title: Enter the title for the page, if empty the name of the page will be used
+		///</summary>
+		[ImplementPropertyType("title")]
+		public string Title
+		{
+			get { return TitleControls.GetTitle(this); }
 		}
 	}
 
@@ -200,7 +227,7 @@ namespace Umbraco.Web.PublishedContentModels
 
 	/// <summary>Search</summary>
 	[PublishedContentModel("search")]
-	public partial class Search : PublishedContentModel
+	public partial class Search : PublishedContentModel, ITitleControls
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "search";
@@ -221,6 +248,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Search, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Title: Enter the title for the page, if empty the name of the page will be used
+		///</summary>
+		[ImplementPropertyType("title")]
+		public string Title
+		{
+			get { return TitleControls.GetTitle(this); }
 		}
 	}
 

@@ -88,6 +88,10 @@ namespace NewGood
             return cachedObject;
         }
 
+        public ActionResult RenderTitle()
+        {
+            return PartialView("~/Views/Partials/SiteLayout/_Title.cshtml");
+        }
         public ActionResult RenderFooter()
         {
             return PartialView("~/Views/Partials/SiteLayout/_Footer.cshtml");
