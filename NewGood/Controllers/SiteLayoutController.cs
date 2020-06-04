@@ -1,10 +1,12 @@
-﻿using NewGood.Models;
+﻿using System;
+using NewGood.Models;
 using System.Collections.Generic;
 using System.Web.Mvc;
 using Umbraco.Core.Models;
 using Umbraco.Web;
 using Umbraco.Web.Mvc;
 using System.Linq;
+using System.Runtime.Caching;
 
 namespace NewGood
 {
@@ -18,8 +20,12 @@ namespace NewGood
         public ActionResult RenderHeader()
         {
             // when renderheader is called it calls GetNavigationModelFromDatabase() method
-            List<NavigationListItem> nav = GetNavigationModelFromDatabase();
+            //List<NavigationListItem> nav = GetNavigationModelFromDatabase();
+
+            // use the model from the cache instead of db
+            List<NavigationListItem> nav = GetObjectFromCache<List<NavigationListItem>>("mainNav", 0, GetNavigationModelFromDatabase);
             return PartialView("~/Views/Partials/SiteLayout/_Header.cshtml", nav);
+
         }
 
         /// <summary>
@@ -58,6 +64,28 @@ namespace NewGood
                 }
             }
             return listItems;
+        }
+
+        /// <summary>
+        /// A generic function for getting and setting objects to the memory cache.
+        /// </summary>
+        /// <typeparam name="T">The type of the object to be returned.</typeparam>
+        /// <param name="cacheItemName">The name to be used when storing this object in the cache.</param>
+        /// <param name="cacheTimeInMinutes">How long to cache this object for.</param>
+        /// <param name="objectSettingFunction">A parameterless function to call if the object isn't in the cache and you need to set it.</param>
+        /// <returns>An object of the type you asked for</returns>
+        private static T GetObjectFromCache<T>(string cacheItemName, int cacheTimeInMinutes, Func<T> objectSettingFunction)
+        {
+            ObjectCache cache = MemoryCache.Default;
+            var cachedObject = (T)cache[cacheItemName];
+            if (cachedObject == null)
+            {
+                CacheItemPolicy policy = new CacheItemPolicy();
+                policy.AbsoluteExpiration = DateTimeOffset.Now.AddMinutes(cacheTimeInMinutes);
+                cachedObject = objectSettingFunction();
+                cache.Set(cacheItemName, cachedObject, policy);
+            }
+            return cachedObject;
         }
 
         public ActionResult RenderFooter()
