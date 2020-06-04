@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "23ff7de8a2a560ba")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "f6d8f91c4f2336c5")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 
 // FILE: models.generated.cs
@@ -42,7 +42,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Home</summary>
 	[PublishedContentModel("home")]
-	public partial class Home : PublishedContentModel
+	public partial class Home : PublishedContentModel, IIntroControls
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "home";
@@ -63,6 +63,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Home, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Intro: Enter intro for the page
+		///</summary>
+		[ImplementPropertyType("intro")]
+		public string Intro
+		{
+			get { return IntroControls.GetIntro(this); }
 		}
 	}
 
@@ -146,7 +155,7 @@ namespace Umbraco.Web.PublishedContentModels
 
 	/// <summary>About</summary>
 	[PublishedContentModel("about")]
-	public partial class About : PublishedContentModel
+	public partial class About : PublishedContentModel, ITitleControls
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "about";
@@ -167,6 +176,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<About, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Title: Enter the title for the page, if empty the name of the page will be used
+		///</summary>
+		[ImplementPropertyType("title")]
+		public string Title
+		{
+			get { return TitleControls.GetTitle(this); }
 		}
 	}
 
@@ -220,6 +238,98 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
+	}
+
+	// Mixin content Type 1071 with alias "introControls"
+	/// <summary>Intro Controls</summary>
+	public partial interface IIntroControls : IPublishedContent
+	{
+		/// <summary>Intro</summary>
+		string Intro { get; }
+	}
+
+	/// <summary>Intro Controls</summary>
+	[PublishedContentModel("introControls")]
+	public partial class IntroControls : PublishedContentModel, IIntroControls
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "introControls";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public IntroControls(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<IntroControls, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Intro: Enter intro for the page
+		///</summary>
+		[ImplementPropertyType("intro")]
+		public string Intro
+		{
+			get { return GetIntro(this); }
+		}
+
+		/// <summary>Static getter for Intro</summary>
+		public static string GetIntro(IIntroControls that) { return that.GetPropertyValue<string>("intro"); }
+	}
+
+	// Mixin content Type 1072 with alias "titleControls"
+	/// <summary>Title Controls</summary>
+	public partial interface ITitleControls : IPublishedContent
+	{
+		/// <summary>Title</summary>
+		string Title { get; }
+	}
+
+	/// <summary>Title Controls</summary>
+	[PublishedContentModel("titleControls")]
+	public partial class TitleControls : PublishedContentModel, ITitleControls
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "titleControls";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public TitleControls(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<TitleControls, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Title: Enter the title for the page, if empty the name of the page will be used
+		///</summary>
+		[ImplementPropertyType("title")]
+		public string Title
+		{
+			get { return GetTitle(this); }
+		}
+
+		/// <summary>Static getter for Title</summary>
+		public static string GetTitle(ITitleControls that) { return that.GetPropertyValue<string>("title"); }
 	}
 
 	/// <summary>Folder</summary>
