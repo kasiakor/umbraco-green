@@ -1669,8 +1669,9 @@ ul.list-inline {
 
 /* about image  */
 #facts-img {
-    max-width: 250px;
-    margin: 20px auto 45px;
+    display: block;
+    margin: 0 auto;
+    width: 35%;
 }
 
 /* search-container */
