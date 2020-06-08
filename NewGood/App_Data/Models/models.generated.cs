@@ -19,7 +19,7 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "dfdb48dbe2f1ef8c")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "a85da017a474e151")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Web.PublishedContentModels
@@ -131,7 +131,7 @@ namespace Umbraco.Web.PublishedContentModels
 
 	/// <summary>Guide</summary>
 	[PublishedContentModel("guide")]
-	public partial class Guide : PublishedContentModel, ITitleControls
+	public partial class Guide : PublishedContentModel, IHideFromNavControls, ITitleControls
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "guide";
@@ -152,6 +152,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Guide, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// umbracoNaviHide: Tick to hide from top navigation
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return HideFromNavControls.GetUmbracoNaviHide(this); }
 		}
 
 		///<summary>
@@ -405,6 +414,52 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Static getter for Content Grid</summary>
 		public static Newtonsoft.Json.Linq.JToken GetContentGrid(IBasicContentControls that) { return that.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("contentGrid"); }
+	}
+
+	// Mixin content Type 1077 with alias "hideFromNavControls"
+	/// <summary>Hide from Nav Controls</summary>
+	public partial interface IHideFromNavControls : IPublishedContent
+	{
+		/// <summary>umbracoNaviHide</summary>
+		bool UmbracoNaviHide { get; }
+	}
+
+	/// <summary>Hide from Nav Controls</summary>
+	[PublishedContentModel("hideFromNavControls")]
+	public partial class HideFromNavControls : PublishedContentModel, IHideFromNavControls
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "hideFromNavControls";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public HideFromNavControls(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<HideFromNavControls, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// umbracoNaviHide: Tick to hide from top navigation
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return GetUmbracoNaviHide(this); }
+		}
+
+		/// <summary>Static getter for umbracoNaviHide</summary>
+		public static bool GetUmbracoNaviHide(IHideFromNavControls that) { return that.GetPropertyValue<bool>("umbracoNaviHide"); }
 	}
 
 	/// <summary>Folder</summary>
