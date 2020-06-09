@@ -715,17 +715,16 @@ h1, h2, h3, h4, h5, h6, figure {
     margin-bottom: 60px;
   }
 }
-#fh5co-main-services-section .services-inner .desc {
+/*#fh5co-main-services-section .services-inner .desc {
   padding-left: 8em;
-}
+}*/
 #fh5co-main-services-section .services-inner h3 {
   color: rgba(0, 0, 0, 0.7);
 }
 #fh5co-main-services-section .services-inner span {
-  position: absolute;
-  top: 0;
   display: block;
-  margin-bottom: 45px;
+  margin: 60px 0 55px 0;
+  text-align: center;
 }
 #fh5co-main-services-section .services-inner span i {
   font-size: 40px;
