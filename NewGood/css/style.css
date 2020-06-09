@@ -37,7 +37,8 @@ a:hover, a:active, a:focus {
 }
 
 p {
-  margin-bottom: 30px;
+  margin: 0;
+  padding: 0;
   font-size: 18px;
   font-weight: 400;
 }

@@ -4,11 +4,7 @@
 }
 <div id="fh5co-about-section">
     <div class="container">
-        @{ Html.RenderAction("RenderTitle", "SiteLayout");}
-        <div class="row">
-            <div class="col-md-12">
-              @CurrentPage.GetGridHtml("contentGrid", "bootstrap3")
-            </div>
-        </div>
+       @{ Html.RenderAction("RenderTitle", "SiteLayout");}
+       @CurrentPage.GetGridHtml("contentGrid");
     </div>
 </div>
