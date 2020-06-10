@@ -616,6 +616,7 @@
     <Content Include="Views\Contact.cshtml" />
     <Content Include="Views\Search.cshtml" />
     <Content Include="Views\Partials\SiteLayout\_Title.cshtml" />
+    <Content Include="Views\BlogPost.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
