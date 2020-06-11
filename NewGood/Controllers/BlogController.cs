@@ -12,12 +12,12 @@ namespace NewGood.Controllers
 {
     public class BlogController : SurfaceController
     {
-        public ActionResult RenderPostList()
+        public ActionResult RenderPostList(int numberOfItems)
         {
             List<BlogPostList> model = new List<BlogPostList>();
             IPublishedContent blogPage = CurrentPage.AncestorOrSelf(1).DescendantsOrSelf().Where(x => x.DocumentTypeAlias == "blog").FirstOrDefault();
 
-            foreach (IPublishedContent page in blogPage.Children.OrderByDescending(x => x.UpdateDate))
+            foreach (IPublishedContent page in blogPage.Children.OrderByDescending(x => x.UpdateDate).Take(numberOfItems))
             {
 
                 //string name = page.GetPropertyValue<string>("title") or:
