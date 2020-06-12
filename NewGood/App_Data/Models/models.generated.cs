@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "4a48602f2cae02c7")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "39e6c69ecbd998c5")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -112,6 +112,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Subtitle: Enter subtitle for the page
+		///</summary>
+		[ImplementPropertyType("subtitle")]
+		public IHtmlString Subtitle
+		{
+			get { return TitleControls.GetSubtitle(this); }
+		}
+
+		///<summary>
 		/// Title: Enter the title for the page, if empty the name of the page will be used
 		///</summary>
 		[ImplementPropertyType("title")]
@@ -144,6 +153,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Products, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Subtitle: Enter subtitle for the page
+		///</summary>
+		[ImplementPropertyType("subtitle")]
+		public IHtmlString Subtitle
+		{
+			get { return TitleControls.GetSubtitle(this); }
 		}
 
 		///<summary>
@@ -191,6 +209,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Subtitle: Enter subtitle for the page
+		///</summary>
+		[ImplementPropertyType("subtitle")]
+		public IHtmlString Subtitle
+		{
+			get { return TitleControls.GetSubtitle(this); }
+		}
+
+		///<summary>
 		/// Title: Enter the title for the page, if empty the name of the page will be used
 		///</summary>
 		[ImplementPropertyType("title")]
@@ -232,6 +259,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public Newtonsoft.Json.Linq.JToken ContentGrid
 		{
 			get { return BasicContentControls.GetContentGrid(this); }
+		}
+
+		///<summary>
+		/// Subtitle: Enter subtitle for the page
+		///</summary>
+		[ImplementPropertyType("subtitle")]
+		public IHtmlString Subtitle
+		{
+			get { return TitleControls.GetSubtitle(this); }
 		}
 
 		///<summary>
@@ -296,6 +332,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Subtitle: Enter subtitle for the page
+		///</summary>
+		[ImplementPropertyType("subtitle")]
+		public IHtmlString Subtitle
+		{
+			get { return TitleControls.GetSubtitle(this); }
+		}
+
+		///<summary>
 		/// Title: Enter the title for the page, if empty the name of the page will be used
 		///</summary>
 		[ImplementPropertyType("title")]
@@ -355,6 +400,9 @@ namespace Umbraco.Web.PublishedContentModels
 	/// <summary>Title Controls</summary>
 	public partial interface ITitleControls : IPublishedContent
 	{
+		/// <summary>Subtitle</summary>
+		IHtmlString Subtitle { get; }
+
 		/// <summary>Title</summary>
 		string Title { get; }
 	}
@@ -383,6 +431,18 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
+
+		///<summary>
+		/// Subtitle: Enter subtitle for the page
+		///</summary>
+		[ImplementPropertyType("subtitle")]
+		public IHtmlString Subtitle
+		{
+			get { return GetSubtitle(this); }
+		}
+
+		/// <summary>Static getter for Subtitle</summary>
+		public static IHtmlString GetSubtitle(ITitleControls that) { return that.GetPropertyValue<IHtmlString>("subtitle"); }
 
 		///<summary>
 		/// Title: Enter the title for the page, if empty the name of the page will be used
@@ -646,6 +706,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public Newtonsoft.Json.Linq.JToken ContentGrid
 		{
 			get { return BasicContentControls.GetContentGrid(this); }
+		}
+
+		///<summary>
+		/// Subtitle: Enter subtitle for the page
+		///</summary>
+		[ImplementPropertyType("subtitle")]
+		public IHtmlString Subtitle
+		{
+			get { return TitleControls.GetSubtitle(this); }
 		}
 
 		///<summary>
