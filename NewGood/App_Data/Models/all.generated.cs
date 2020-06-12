@@ -8,7 +8,7 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "bff27a8ef12fb5ff")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "4a48602f2cae02c7")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -42,7 +42,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Home</summary>
 	[PublishedContentModel("home")]
-	public partial class Home : PublishedContentModel, IFeaturedItemsControls, IIntroControls
+	public partial class Home : PublishedContentModel, IBlogPreviewControls, IFeaturedItemsControls, IIntroControls
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "home";
@@ -63,6 +63,24 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Home, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Blog Preview Intro: Enter blog preview intro on home page
+		///</summary>
+		[ImplementPropertyType("blogPreviewIntro")]
+		public IHtmlString BlogPreviewIntro
+		{
+			get { return BlogPreviewControls.GetBlogPreviewIntro(this); }
+		}
+
+		///<summary>
+		/// Blog Preview Title: Enter blog preview title on home page
+		///</summary>
+		[ImplementPropertyType("blogPreviewTitle")]
+		public string BlogPreviewTitle
+		{
+			get { return BlogPreviewControls.GetBlogPreviewTitle(this); }
 		}
 
 		///<summary>
@@ -654,6 +672,67 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			get { return TitleControls.GetTitle(this); }
 		}
+	}
+
+	// Mixin content Type 1096 with alias "blogPreviewControls"
+	/// <summary>Blog Preview Controls</summary>
+	public partial interface IBlogPreviewControls : IPublishedContent
+	{
+		/// <summary>Blog Preview Intro</summary>
+		IHtmlString BlogPreviewIntro { get; }
+
+		/// <summary>Blog Preview Title</summary>
+		string BlogPreviewTitle { get; }
+	}
+
+	/// <summary>Blog Preview Controls</summary>
+	[PublishedContentModel("blogPreviewControls")]
+	public partial class BlogPreviewControls : PublishedContentModel, IBlogPreviewControls
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "blogPreviewControls";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public BlogPreviewControls(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<BlogPreviewControls, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Blog Preview Intro: Enter blog preview intro on home page
+		///</summary>
+		[ImplementPropertyType("blogPreviewIntro")]
+		public IHtmlString BlogPreviewIntro
+		{
+			get { return GetBlogPreviewIntro(this); }
+		}
+
+		/// <summary>Static getter for Blog Preview Intro</summary>
+		public static IHtmlString GetBlogPreviewIntro(IBlogPreviewControls that) { return that.GetPropertyValue<IHtmlString>("blogPreviewIntro"); }
+
+		///<summary>
+		/// Blog Preview Title: Enter blog preview title on home page
+		///</summary>
+		[ImplementPropertyType("blogPreviewTitle")]
+		public string BlogPreviewTitle
+		{
+			get { return GetBlogPreviewTitle(this); }
+		}
+
+		/// <summary>Static getter for Blog Preview Title</summary>
+		public static string GetBlogPreviewTitle(IBlogPreviewControls that) { return that.GetPropertyValue<string>("blogPreviewTitle"); }
 	}
 
 	/// <summary>Folder</summary>

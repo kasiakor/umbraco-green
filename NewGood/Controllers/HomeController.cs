@@ -58,7 +58,15 @@ namespace NewGood.Controllers
 
         public ActionResult RenderBlog()
         {
-            return PartialView("~/Views/Partials/Home/_Blog.cshtml");
+            
+            IPublishedContent homePage = CurrentPage.AncestorOrSelf("home");
+
+            string title = homePage.GetPropertyValue<string>("blogPreviewTitle");
+            string introduction = homePage.GetPropertyValue("blogPreviewIntro").ToString();
+
+            BlogPreview model = new BlogPreview(title, introduction);
+          
+            return PartialView("~/Views/Partials/Home/_Blog.cshtml", model);
         }
 
         public ActionResult RenderTestimonials()
