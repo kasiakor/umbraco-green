@@ -25,7 +25,8 @@ namespace NewGood.Controllers
         public ActionResult RenderFeatured()
         {
            List<FeaturedItem> model = new List<FeaturedItem> ();
-            IPublishedContent homePage = CurrentPage.AncestorOrSelf(1).DescendantsOrSelf().Where(x => x.DocumentTypeAlias == "home").FirstOrDefault();
+            //IPublishedContent homePage = CurrentPage.AncestorOrSelf(1).DescendantsOrSelf().Where(x => x.DocumentTypeAlias == "home").FirstOrDefault();
+            IPublishedContent homePage = CurrentPage.AncestorOrSelf("home");
 
             //Get property from the homepage
             //From ArchetypeMode model get all the fieldsets and put them into FeaturedItem class
