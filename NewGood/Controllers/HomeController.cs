@@ -71,7 +71,13 @@ namespace NewGood.Controllers
 
         public ActionResult RenderTestimonials()
         {
-            return PartialView("~/Views/Partials/Home/_Testimonials.cshtml");
+            IPublishedContent homePage = CurrentPage.AncestorOrSelf("home");
+
+            string title = homePage.GetPropertyValue<string>("testimonialsTitle");
+            string introduction = homePage.GetPropertyValue("testimonialsIntro").ToString();
+
+            Testimonials model = new Testimonials(title, introduction);
+            return PartialView("~/Views/Partials/Home/_Testimonials.cshtml", model);
         }
     }
 }

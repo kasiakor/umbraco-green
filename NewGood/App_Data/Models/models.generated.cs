@@ -19,14 +19,14 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "39e6c69ecbd998c5")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "d2c5262d23ca82ec")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Home</summary>
 	[PublishedContentModel("home")]
-	public partial class Home : PublishedContentModel, IBlogPreviewControls, IFeaturedItemsControls, IIntroControls
+	public partial class Home : PublishedContentModel, IBlogPreviewControls, IFeaturedItemsControls, IIntroControls, ITestimonialsControls
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "home";
@@ -83,6 +83,24 @@ namespace Umbraco.Web.PublishedContentModels
 		public string Intro
 		{
 			get { return IntroControls.GetIntro(this); }
+		}
+
+		///<summary>
+		/// Testimonials Intro: Enter intro for testimonials on home page
+		///</summary>
+		[ImplementPropertyType("testimonialsIntro")]
+		public IHtmlString TestimonialsIntro
+		{
+			get { return TestimonialsControls.GetTestimonialsIntro(this); }
+		}
+
+		///<summary>
+		/// Testimonials Title: Enter title for testimonials
+		///</summary>
+		[ImplementPropertyType("testimonialsTitle")]
+		public string TestimonialsTitle
+		{
+			get { return TestimonialsControls.GetTestimonialsTitle(this); }
 		}
 	}
 
@@ -786,6 +804,67 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Static getter for Blog Preview Title</summary>
 		public static string GetBlogPreviewTitle(IBlogPreviewControls that) { return that.GetPropertyValue<string>("blogPreviewTitle"); }
+	}
+
+	// Mixin content Type 1097 with alias "testimonialsControls"
+	/// <summary>Testimonials Controls</summary>
+	public partial interface ITestimonialsControls : IPublishedContent
+	{
+		/// <summary>Testimonials Intro</summary>
+		IHtmlString TestimonialsIntro { get; }
+
+		/// <summary>Testimonials Title</summary>
+		string TestimonialsTitle { get; }
+	}
+
+	/// <summary>Testimonials Controls</summary>
+	[PublishedContentModel("testimonialsControls")]
+	public partial class TestimonialsControls : PublishedContentModel, ITestimonialsControls
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "testimonialsControls";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public TestimonialsControls(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<TestimonialsControls, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Testimonials Intro: Enter intro for testimonials on home page
+		///</summary>
+		[ImplementPropertyType("testimonialsIntro")]
+		public IHtmlString TestimonialsIntro
+		{
+			get { return GetTestimonialsIntro(this); }
+		}
+
+		/// <summary>Static getter for Testimonials Intro</summary>
+		public static IHtmlString GetTestimonialsIntro(ITestimonialsControls that) { return that.GetPropertyValue<IHtmlString>("testimonialsIntro"); }
+
+		///<summary>
+		/// Testimonials Title: Enter title for testimonials
+		///</summary>
+		[ImplementPropertyType("testimonialsTitle")]
+		public string TestimonialsTitle
+		{
+			get { return GetTestimonialsTitle(this); }
+		}
+
+		/// <summary>Static getter for Testimonials Title</summary>
+		public static string GetTestimonialsTitle(ITestimonialsControls that) { return that.GetPropertyValue<string>("testimonialsTitle"); }
 	}
 
 	/// <summary>Folder</summary>
