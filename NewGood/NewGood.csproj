@@ -663,6 +663,7 @@
     <Compile Include="Models\FeaturedItem.cs" />
     <Compile Include="Models\NavigationLink.cs" />
     <Compile Include="Models\NavigationListItem.cs" />
+    <Compile Include="Models\Testimonial.cs" />
     <Compile Include="Models\Testimonials.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
