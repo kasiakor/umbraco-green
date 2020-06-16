@@ -17,16 +17,16 @@ namespace NewGood.Models
             {
                 switch (TestimonialsList.Count)
                 {
+                    case 1:
+                        return "col-md-12";
                     case 2:
                         return "col-md-6";
                     case 3:
                         return "col-md-4";
                     default:
-                        return "col-md-12";
+                        return "col-md-3";
                 }
-
             }
-
         }
 
         public Testimonials(string title, string introduction, List<Testimonial> testimonialsList)

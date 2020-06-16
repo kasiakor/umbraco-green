@@ -80,7 +80,7 @@ namespace NewGood.Controllers
             ArchetypeModel testimonialsList = homePage.GetPropertyValue<ArchetypeModel>("testimonialsList");
             if (testimonialsList != null)
             {
-                foreach (ArchetypeFieldsetModel testimonial in testimonialsList)
+                foreach (ArchetypeFieldsetModel testimonial in testimonialsList.Take(2))
                 {
 
                     string name = testimonial.GetValue<string>("name");
