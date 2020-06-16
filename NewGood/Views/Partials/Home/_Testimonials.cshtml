@@ -10,24 +10,18 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6 text-center">
-                <div class="testimony">
-                    <span class="quote"><i class="icon-quote-right"></i></span>
-                    <blockquote>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                        <span>Athan Smith, via <a href="#" class="icon-twitter twitter-color"></a></span>
-                    </blockquote>
+            @foreach(Testimonial testimonial in Model.TestimonialsList)
+            {
+                <div class="@(Model.ColumnClass) text-center">
+                    <div class="testimony">
+                        <span class="quote"><i class="icon-quote-right"></i></span>
+                        <blockquote>
+                            <p>@testimonial.Quote</p>
+                            <span>@testimonial.Name</span>
+                        </blockquote>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6 text-center">
-                <div class="testimony">
-                    <span class="quote"><i class="icon-quote-right"></i></span>
-                    <blockquote>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                        <span>Athan Smith, via <a href="#" class="icon-google-plus googleplus-color"></a></span>
-                    </blockquote>
-                </div>
-            </div>
+            }
         </div>
     </div>
 </div>

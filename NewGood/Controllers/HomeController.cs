@@ -24,7 +24,7 @@ namespace NewGood.Controllers
 
         public ActionResult RenderFeatured()
         {
-           List<FeaturedItem> model = new List<FeaturedItem> ();
+            List<FeaturedItem> model = new List<FeaturedItem>();
             //IPublishedContent homePage = CurrentPage.AncestorOrSelf(1).DescendantsOrSelf().Where(x => x.DocumentTypeAlias == "home").FirstOrDefault();
             IPublishedContent homePage = CurrentPage.AncestorOrSelf("home");
 
@@ -32,7 +32,7 @@ namespace NewGood.Controllers
             //From ArchetypeMode model get all the fieldsets and put them into FeaturedItem class
             ArchetypeModel featuredItems = homePage.GetPropertyValue<ArchetypeModel>("featuredItems");
 
-            foreach(ArchetypeFieldsetModel fieldset in featuredItems)
+            foreach (ArchetypeFieldsetModel fieldset in featuredItems)
             {
 
                 string name = fieldset.GetValue<string>("name");
@@ -58,14 +58,14 @@ namespace NewGood.Controllers
 
         public ActionResult RenderBlog()
         {
-            
+
             IPublishedContent homePage = CurrentPage.AncestorOrSelf("home");
 
             string title = homePage.GetPropertyValue<string>("blogPreviewTitle");
             string introduction = homePage.GetPropertyValue("blogPreviewIntro").ToString();
 
             BlogPreview model = new BlogPreview(title, introduction);
-          
+
             return PartialView("~/Views/Partials/Home/_Blog.cshtml", model);
         }
 
@@ -76,7 +76,21 @@ namespace NewGood.Controllers
             string title = homePage.GetPropertyValue<string>("testimonialsTitle");
             string introduction = homePage.GetPropertyValue("testimonialsIntro").ToString();
 
-            Testimonials model = new Testimonials(title, introduction);
+            List<Testimonial> testimonials = new List<Testimonial>();
+            ArchetypeModel testimonialsList = homePage.GetPropertyValue<ArchetypeModel>("testimonialsList");
+            if (testimonialsList != null)
+            {
+                foreach (ArchetypeFieldsetModel testimonial in testimonialsList)
+                {
+
+                    string name = testimonial.GetValue<string>("name");
+                    string quote = testimonial.GetValue<string>("quote");
+
+                    testimonials.Add(new Testimonial(name, quote));
+                }
+            }
+
+            Testimonials model = new Testimonials(title, introduction, testimonials);
             return PartialView("~/Views/Partials/Home/_Testimonials.cshtml", model);
         }
     }

@@ -19,7 +19,7 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "d2c5262d23ca82ec")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "73cb753b9faf7549")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Web.PublishedContentModels
@@ -92,6 +92,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public IHtmlString TestimonialsIntro
 		{
 			get { return TestimonialsControls.GetTestimonialsIntro(this); }
+		}
+
+		///<summary>
+		/// Testimonials List: Enter the testimonial
+		///</summary>
+		[ImplementPropertyType("testimonialsList")]
+		public Archetype.Models.ArchetypeModel TestimonialsList
+		{
+			get { return TestimonialsControls.GetTestimonialsList(this); }
 		}
 
 		///<summary>
@@ -813,6 +822,9 @@ namespace Umbraco.Web.PublishedContentModels
 		/// <summary>Testimonials Intro</summary>
 		IHtmlString TestimonialsIntro { get; }
 
+		/// <summary>Testimonials List</summary>
+		Archetype.Models.ArchetypeModel TestimonialsList { get; }
+
 		/// <summary>Testimonials Title</summary>
 		string TestimonialsTitle { get; }
 	}
@@ -853,6 +865,18 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Static getter for Testimonials Intro</summary>
 		public static IHtmlString GetTestimonialsIntro(ITestimonialsControls that) { return that.GetPropertyValue<IHtmlString>("testimonialsIntro"); }
+
+		///<summary>
+		/// Testimonials List: Enter the testimonial
+		///</summary>
+		[ImplementPropertyType("testimonialsList")]
+		public Archetype.Models.ArchetypeModel TestimonialsList
+		{
+			get { return GetTestimonialsList(this); }
+		}
+
+		/// <summary>Static getter for Testimonials List</summary>
+		public static Archetype.Models.ArchetypeModel GetTestimonialsList(ITestimonialsControls that) { return that.GetPropertyValue<Archetype.Models.ArchetypeModel>("testimonialsList"); }
 
 		///<summary>
 		/// Testimonials Title: Enter title for testimonials
