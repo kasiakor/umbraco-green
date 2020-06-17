@@ -1,0 +1,24 @@
+﻿@inherits UmbracoViewPage<List<GuideItem>>
+@using NewGood.Models
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    @RenderGuideItem(Model[0], "sl-icon-star")
+                    @RenderGuideItem(Model[1], "sl-icon-star")
+                </div>
+            </div>
+        </div>
+
+
+@helper RenderGuideItem(GuideItem item, string extraClass)
+{
+    <div class="col-md-12 services-inner">
+        <span><i class="@extraClass"></i></span>
+        <div class="desc">
+            <h3>@item.Category</h3>
+            <p>@item.Description</p>
+        </div>
+    </div>
+}

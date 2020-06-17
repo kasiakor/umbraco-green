@@ -19,7 +19,7 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "73cb753b9faf7549")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "9e4ab6902d492e02")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Web.PublishedContentModels
@@ -203,7 +203,7 @@ namespace Umbraco.Web.PublishedContentModels
 
 	/// <summary>Guide</summary>
 	[PublishedContentModel("guide")]
-	public partial class Guide : PublishedContentModel, IHideFromNavControls, ITitleControls
+	public partial class Guide : PublishedContentModel, IGuideItemsControls, IHideFromNavControls, ITitleControls
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "guide";
@@ -224,6 +224,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Guide, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Guide Items: Enter guide item
+		///</summary>
+		[ImplementPropertyType("guideItems")]
+		public Archetype.Models.ArchetypeModel GuideItems
+		{
+			get { return GuideItemsControls.GetGuideItems(this); }
 		}
 
 		///<summary>
@@ -889,6 +898,52 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Static getter for Testimonials Title</summary>
 		public static string GetTestimonialsTitle(ITestimonialsControls that) { return that.GetPropertyValue<string>("testimonialsTitle"); }
+	}
+
+	// Mixin content Type 1100 with alias "guideItemsControls"
+	/// <summary>Guide Items Controls</summary>
+	public partial interface IGuideItemsControls : IPublishedContent
+	{
+		/// <summary>Guide Items</summary>
+		Archetype.Models.ArchetypeModel GuideItems { get; }
+	}
+
+	/// <summary>Guide Items Controls</summary>
+	[PublishedContentModel("guideItemsControls")]
+	public partial class GuideItemsControls : PublishedContentModel, IGuideItemsControls
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "guideItemsControls";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public GuideItemsControls(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<GuideItemsControls, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Guide Items: Enter guide item
+		///</summary>
+		[ImplementPropertyType("guideItems")]
+		public Archetype.Models.ArchetypeModel GuideItems
+		{
+			get { return GetGuideItems(this); }
+		}
+
+		/// <summary>Static getter for Guide Items</summary>
+		public static Archetype.Models.ArchetypeModel GetGuideItems(IGuideItemsControls that) { return that.GetPropertyValue<Archetype.Models.ArchetypeModel>("guideItems"); }
 	}
 
 	/// <summary>Folder</summary>
