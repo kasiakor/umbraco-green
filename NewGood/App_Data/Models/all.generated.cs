@@ -8,7 +8,7 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "9e4ab6902d492e02")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "11239c2ea16d860a")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -42,7 +42,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Home</summary>
 	[PublishedContentModel("home")]
-	public partial class Home : PublishedContentModel, IBlogPreviewControls, IFeaturedItemsControls, IIntroControls, ITestimonialsControls
+	public partial class Home : PublishedContentModel, IBannerControls, IBlogPreviewControls, IFeaturedItemsControls, IIntroControls, ITestimonialsControls
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "home";
@@ -63,6 +63,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Home, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Banner Intro: Enter banner introduction
+		///</summary>
+		[ImplementPropertyType("bannerIntro")]
+		public string BannerIntro
+		{
+			get { return BannerControls.GetBannerIntro(this); }
 		}
 
 		///<summary>
@@ -960,6 +969,52 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Static getter for Guide Items</summary>
 		public static Archetype.Models.ArchetypeModel GetGuideItems(IGuideItemsControls that) { return that.GetPropertyValue<Archetype.Models.ArchetypeModel>("guideItems"); }
+	}
+
+	// Mixin content Type 1101 with alias "bannerControls"
+	/// <summary>Banner Controls</summary>
+	public partial interface IBannerControls : IPublishedContent
+	{
+		/// <summary>Banner Intro</summary>
+		string BannerIntro { get; }
+	}
+
+	/// <summary>Banner Controls</summary>
+	[PublishedContentModel("bannerControls")]
+	public partial class BannerControls : PublishedContentModel, IBannerControls
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "bannerControls";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public BannerControls(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<BannerControls, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Banner Intro: Enter banner introduction
+		///</summary>
+		[ImplementPropertyType("bannerIntro")]
+		public string BannerIntro
+		{
+			get { return GetBannerIntro(this); }
+		}
+
+		/// <summary>Static getter for Banner Intro</summary>
+		public static string GetBannerIntro(IBannerControls that) { return that.GetPropertyValue<string>("bannerIntro"); }
 	}
 
 	/// <summary>Folder</summary>
