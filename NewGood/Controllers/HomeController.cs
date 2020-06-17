@@ -12,14 +12,18 @@ namespace NewGood.Controllers
 {
     public class HomeController : SurfaceController
     {
+        private string PartialViewPath(string name)
+        {
+            return $"~/Views/Partials/Home/{name}.cshtml";
+        }
         public ActionResult RenderBanner()
         {
-            return PartialView("~/Views/Partials/Home/_Banner.cshtml");
+            return PartialView(PartialViewPath("_Banner"));
         }
 
         public ActionResult RenderIntro()
         {
-            return PartialView("~/Views/Partials/Home/_Intro.cshtml");
+            return PartialView(PartialViewPath("_Intro"));
         }
 
         public ActionResult RenderFeatured()
@@ -53,7 +57,7 @@ namespace NewGood.Controllers
 
                 model.Add(new FeaturedItem(name, category, imageUrl, linkUrl));
             }
-            return PartialView("~/Views/Partials/Home/_Featured.cshtml", model);
+            return PartialView(PartialViewPath("_Featured"), model);
         }
 
         public ActionResult RenderBlog()
@@ -66,7 +70,7 @@ namespace NewGood.Controllers
 
             BlogPreview model = new BlogPreview(title, introduction);
 
-            return PartialView("~/Views/Partials/Home/_Blog.cshtml", model);
+            return PartialView(PartialViewPath("_Blog"), model);
         }
 
         public ActionResult RenderTestimonials()
@@ -91,7 +95,7 @@ namespace NewGood.Controllers
             }
 
             Testimonials model = new Testimonials(title, introduction, testimonials);
-            return PartialView("~/Views/Partials/Home/_Testimonials.cshtml", model);
+            return PartialView(PartialViewPath("_Testimonials"), model);
         }
     }
 }
