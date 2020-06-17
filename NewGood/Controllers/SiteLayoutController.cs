@@ -12,6 +12,10 @@ namespace NewGood
 {
     public class SiteLayoutController : SurfaceController
     {
+        private string PartialViewPath(string name)
+        {
+            return $"~/Views/Partials/SiteLayout/{name}.cshtml";
+        }
         /// <summary>
         /// Renders the header partial with navigation
         /// </summary>
@@ -24,7 +28,7 @@ namespace NewGood
 
             // use the model from the cache instead of db
             List<NavigationListItem> nav = GetObjectFromCache<List<NavigationListItem>>("mainNav", 0, GetNavigationModelFromDatabase);
-            return PartialView("~/Views/Partials/SiteLayout/_Header.cshtml", nav);
+            return PartialView(PartialViewPath("_Header"), nav);
 
         }
 
@@ -90,11 +94,11 @@ namespace NewGood
 
         public ActionResult RenderTitle()
         {
-            return PartialView("~/Views/Partials/SiteLayout/_Title.cshtml");
+            return PartialView(PartialViewPath("_Title"));
         }
         public ActionResult RenderFooter()
         {
-            return PartialView("~/Views/Partials/SiteLayout/_Footer.cshtml");
+            return PartialView(PartialViewPath("_Footer"));
         }
     }
 }

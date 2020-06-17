@@ -1343,3 +1343,142 @@ _shutDownStack=   at System.Environment.GetStackTrace(Exception e, Boolean needF
  2020-06-17 17:56:34,358 [P2524/D12/T44] INFO  umbraco.content - Save Xml to file...
  2020-06-17 17:56:34,374 [P2524/D12/T44] INFO  umbraco.content - Saved Xml to file.
  2020-06-17 17:58:18,477 [P2524/D12/T98] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type guide matches a locally declared controller of type NewGood.Controllers.GuideController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2020-06-17 18:07:19,716 [P2524/D12/T55] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Guide' with Id '1059' has been published.
+ 2020-06-17 18:07:23,835 [P2524/D12/T105] INFO  umbraco.content - Save Xml to file...
+ 2020-06-17 18:07:23,864 [P2524/D12/T105] INFO  umbraco.content - Saved Xml to file.
+ 2020-06-17 18:07:24,478 [P2524/D12/T21] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type guide matches a locally declared controller of type NewGood.Controllers.GuideController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2020-06-17 18:07:49,840 [P2524/D12/T24] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Guide' with Id '1059' has been published.
+ 2020-06-17 18:07:53,943 [P2524/D12/T111] INFO  umbraco.content - Save Xml to file...
+ 2020-06-17 18:07:53,969 [P2524/D12/T111] INFO  umbraco.content - Saved Xml to file.
+ 2020-06-17 18:08:10,158 [P2524/D12/T21] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Guide' with Id '1059' has been published.
+ 2020-06-17 18:08:13,903 [P2524/D12/T34] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type guide matches a locally declared controller of type NewGood.Controllers.GuideController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2020-06-17 18:08:14,237 [P2524/D12/T32] INFO  umbraco.content - Save Xml to file...
+ 2020-06-17 18:08:14,264 [P2524/D12/T32] INFO  umbraco.content - Saved Xml to file.
+ 2020-06-17 18:08:40,437 [P2524/D12/T98] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type NewGood.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2020-06-17 18:14:10,917 [P2524/D12/T111] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field default
+ 2020-06-17 18:14:10,921 [P2524/D12/T111] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field min
+ 2020-06-17 18:14:10,921 [P2524/D12/T111] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field step
+ 2020-06-17 18:14:10,921 [P2524/D12/T111] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field max
+ 2020-06-17 18:14:10,926 [P2524/D12/T111] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field editor
+ 2020-06-17 18:14:10,926 [P2524/D12/T111] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field hideLabel
+ 2020-06-17 18:14:10,936 [P2524/D12/T111] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field values
+ 2020-06-17 18:14:10,977 [P2524/D12/T111] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field multiPicker
+ 2020-06-17 18:14:10,977 [P2524/D12/T111] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field onlyImages
+ 2020-06-17 18:14:10,977 [P2524/D12/T111] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field disableFolderSelect
+ 2020-06-17 18:14:10,977 [P2524/D12/T111] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field startNodeId
+ 2020-06-17 18:14:10,986 [P2524/D12/T111] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field max
+ 2020-06-17 18:14:10,992 [P2524/D12/T111] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field crops
+ 2020-06-17 18:14:10,996 [P2524/D12/T111] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field onlyImages
+ 2020-06-17 18:14:10,996 [P2524/D12/T111] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field disableFolderSelect
+ 2020-06-17 18:14:10,996 [P2524/D12/T111] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field startNodeId
+ 2020-06-17 18:14:11,063 [P2524/D12/T55] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field min
+ 2020-06-17 18:14:11,063 [P2524/D12/T55] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field step
+ 2020-06-17 18:14:11,063 [P2524/D12/T55] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field max
+ 2020-06-17 18:14:11,065 [P2524/D12/T55] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field default
+ 2020-06-17 18:14:11,068 [P2524/D12/T55] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field values
+ 2020-06-17 18:14:11,082 [P2524/D12/T55] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field editor
+ 2020-06-17 18:14:11,082 [P2524/D12/T55] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field hideLabel
+ 2020-06-17 18:14:11,094 [P2524/D12/T55] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field multiPicker
+ 2020-06-17 18:14:11,094 [P2524/D12/T55] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field onlyImages
+ 2020-06-17 18:14:11,094 [P2524/D12/T55] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field disableFolderSelect
+ 2020-06-17 18:14:11,094 [P2524/D12/T55] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field startNodeId
+ 2020-06-17 18:14:11,099 [P2524/D12/T55] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field crops
+ 2020-06-17 18:14:11,104 [P2524/D12/T55] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field onlyImages
+ 2020-06-17 18:14:11,104 [P2524/D12/T55] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field disableFolderSelect
+ 2020-06-17 18:14:11,104 [P2524/D12/T55] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field startNodeId
+ 2020-06-17 18:14:11,106 [P2524/D12/T55] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field max
+ 2020-06-17 18:17:45,020 [P2524/D12/T111] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Home' with Id '1049' has been published.
+ 2020-06-17 18:17:49,153 [P2524/D12/T43] INFO  umbraco.content - Save Xml to file...
+ 2020-06-17 18:17:49,186 [P2524/D12/T43] INFO  umbraco.content - Saved Xml to file.
+ 2020-06-17 18:17:56,745 [P2524/D12/T92] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type NewGood.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2020-06-17 18:21:15,658 [P2524/D12/T105] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Home' with Id '1049' has been published.
+ 2020-06-17 18:21:19,785 [P2524/D12/T90] INFO  umbraco.content - Save Xml to file...
+ 2020-06-17 18:21:19,816 [P2524/D12/T90] INFO  umbraco.content - Saved Xml to file.
+ 2020-06-17 18:21:20,581 [P2524/D12/T100] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type NewGood.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2020-06-17 18:22:19,661 [P2524/D12/T34] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type guide matches a locally declared controller of type NewGood.Controllers.GuideController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2020-06-17 18:22:40,140 [P2524/D12/T90] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type NewGood.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2020-06-17 18:37:16,946 [P2524/D12/T104] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: kasiakor, IP Address: ::1
+ 2020-06-17 18:42:18,246 [P2524/D12/T111] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Terminating
+ 2020-06-17 18:42:18,246 [P2524/D12/T111] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Waiting for tasks to complete
+ 2020-06-17 18:42:18,248 [P2524/D12/T111] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Terminating
+ 2020-06-17 18:42:18,248 [P2524/D12/T111] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Waiting for tasks to complete
+ 2020-06-17 18:42:18,250 [P2524/D12/T90] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Tasks completed, terminated
+ 2020-06-17 18:42:18,250 [P2524/D12/T85] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Tasks completed, terminated
+ 2020-06-17 18:42:18,288 [P2524/D12/T111] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Terminating
+ 2020-06-17 18:42:18,289 [P2524/D12/T111] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Waiting for tasks to complete
+ 2020-06-17 18:42:18,289 [P2524/D12/T52] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Tasks completed, terminated
+ 2020-06-17 18:42:18,290 [P2524/D12/T111] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Terminating
+ 2020-06-17 18:42:18,290 [P2524/D12/T111] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Waiting for tasks to complete
+ 2020-06-17 18:42:18,290 [P2524/D12/T114] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Tasks completed, terminated
+ 2020-06-17 18:42:18,294 [P2524/D12/T111] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Terminating
+ 2020-06-17 18:42:18,294 [P2524/D12/T111] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Waiting for tasks to complete
+ 2020-06-17 18:42:18,294 [P2524/D12/T99] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Tasks completed, terminated
+ 2020-06-17 18:42:39,556 [P2524/D13/T17] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.5.4 application starting on LAPTOP-UG81TUKE
+ 2020-06-17 18:42:39,623 [P2524/D13/T17] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2020-06-17 18:42:39,656 [P2524/D13/T17] INFO  Umbraco.Core.PluginManager - Hash determined (took 32ms)
+ 2020-06-17 18:42:39,719 [P2524/D13/T17] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+ 2020-06-17 18:42:40,005 [P2524/D13/T17] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 286ms)
+ 2020-06-17 18:42:40,020 [P2524/D13/T17] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2020-06-17 18:42:40,037 [P2524/D13/T17] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 17ms)
+ 2020-06-17 18:42:40,038 [P2524/D13/T17] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2020-06-17 18:42:40,057 [P2524/D13/T17] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 19ms)
+ 2020-06-17 18:42:40,068 [P2524/D13/T17] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+ 2020-06-17 18:42:40,094 [P2524/D13/T17] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 25ms)
+ 2020-06-17 18:42:40,094 [P2524/D13/T17] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+ 2020-06-17 18:42:40,116 [P2524/D13/T17] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 22ms)
+ 2020-06-17 18:42:40,161 [P2524/D13/T17] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+ 2020-06-17 18:42:40,180 [P2524/D13/T17] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 19ms)
+ 2020-06-17 18:42:40,181 [P2524/D13/T17] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+ 2020-06-17 18:42:40,187 [P2524/D13/T17] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 6ms)
+ 2020-06-17 18:42:41,143 [P2524/D13/T17] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2020-06-17 18:42:41,430 [P2524/D13/T17] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2020-06-17 18:42:41,444 [P2524/D13/T17] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2020-06-17 18:42:41,495 [P2524/D13/T17] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2020-06-17 18:42:41,662 [P2524/D13/T17] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2020-06-17 18:42:41,662 [P2524/D13/T17] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2020-06-17 18:42:41,679 [P2524/D13/T17] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 2244ms)
+ 2020-06-17 18:42:41,830 [P2524/D13/T43] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:50341/umbraco (UmbracoModule request)
+ 2020-06-17 18:42:42,100 [P2524/D13/T43] INFO  umbraco.content - Load Xml from file...
+ 2020-06-17 18:42:42,101 [P2524/D13/T43] INFO  umbraco.content - Loaded Xml from file.
+ 2020-06-17 18:42:43,167 [P2524/D13/T43] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2020-06-17 18:42:43,211 [P2524/D13/T43] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 43ms)
+ 2020-06-17 18:42:43,560 [P2524/D13/T43] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+ 2020-06-17 18:42:43,585 [P2524/D13/T43] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 0 (took 24ms)
+ 2020-06-17 18:42:46,666 [P2524/D13/T43] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type NewGood.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2020-06-17 18:42:48,361 [P2524/D12/T44] INFO  Umbraco.Core.UmbracoApplicationBase - Application shutdown. Details: BinDirChangeOrDirectoryRename
+
+_shutDownMessage=Change Notification for critical directories.
+bin dir change or directory rename
+HostingEnvironment initiated shutdown
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change in C:\Users\kasia\AppData\Local\Temp\Temporary ASP.NET Files\vs\7fb14e51\6edc734f\hash\hash.web
+Change in C:\Users\kasia\AppData\Local\Temp\Temporary ASP.NET Files\vs\7fb14e51\6edc734f\hash\hash.web
+Change in C:\Users\kasia\AppData\Local\Temp\Temporary ASP.NET Files\vs\7fb14e51\6edc734f\hash\hash.web
+HostingEnvironment caused shutdown
+
+_shutDownStack=   at System.Environment.GetStackTrace(Exception e, Boolean needFileInfo)
+   at System.Environment.get_StackTrace()
+   at System.Web.Hosting.HostingEnvironment.InitiateShutdownInternal()
+   at System.Web.Hosting.HostingEnvironment.InitiateShutdownWithoutDemand()
+   at System.Web.HttpRuntime.ShutdownAppDomain(String stackTrace)
+   at System.Web.HttpRuntime.OnCriticalDirectoryChange(Object sender, FileChangeEvent e)
+   at System.Web.FileChangesMonitor.OnCriticaldirChange(Object sender, FileChangeEvent e)
+   at System.Web.DirectoryMonitor.FireNotifications()
+   at System.Web.Util.WorkItem.CallCallbackWithAssert(WorkItemCallback callback)
+   at System.Web.Util.WorkItem.OnQueueUserWorkItemCompletion(Object state)
+   at System.Threading.QueueUserWorkItemCallback.WaitCallback_Context(Object state)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.QueueUserWorkItemCallback.System.Threading.IThreadPoolWorkItem.ExecuteWorkItem()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+   at System.Threading._ThreadPoolWaitCallback.PerformWaitCallback()
+ 2020-06-17 18:43:42,155 [P2524/D13/T99] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2020-06-16 18:43:42
