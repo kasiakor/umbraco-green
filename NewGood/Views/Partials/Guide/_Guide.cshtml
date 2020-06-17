@@ -2,14 +2,18 @@
 @using NewGood.Models
 
 
+<div class="row">
+    <div class="col-md-12">
         <div class="row">
-            <div class="col-md-12">
-                <div class="row">
-                    @RenderGuideItem(Model[0], "sl-icon-star")
-                    @RenderGuideItem(Model[1], "sl-icon-star")
-                </div>
-            </div>
+            @RenderGuideItem(Model[0], "sl-icon-star")
+            @RenderGuideItem(Model[1], "sl-icon-drop")
+            @RenderGuideItem(Model[2], "sl-icon-cup")
+            @RenderGuideItem(Model[3], "sl-icon-heart")
+            @RenderGuideItem(Model[4], "sl-icon-music-tone")
+            @RenderGuideItem(Model[5], "sl-icon-rocket")
         </div>
+    </div>
+</div>
 
 
 @helper RenderGuideItem(GuideItem item, string extraClass)

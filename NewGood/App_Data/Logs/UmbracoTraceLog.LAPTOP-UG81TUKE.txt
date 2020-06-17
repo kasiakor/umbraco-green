@@ -1289,3 +1289,57 @@ _shutDownStack=   at System.Environment.GetStackTrace(Exception e, Boolean needF
  2020-06-17 17:01:19,947 [P2524/D12/T111] INFO  umbraco.content - Save Xml to file...
  2020-06-17 17:01:19,961 [P2524/D12/T111] INFO  umbraco.content - Saved Xml to file.
  2020-06-17 17:01:20,853 [P2524/D12/T94] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type NewGood.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2020-06-17 17:20:49,600 [P2524/D12/T7] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: kasiakor, IP Address: ::1
+ 2020-06-17 17:45:28,534 [P2524/D12/T104] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username kasiakor from IP address ::1
+ 2020-06-17 17:45:28,534 [P2524/D12/T104] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: kasiakor logged in from IP address ::1
+ 2020-06-17 17:45:28,673 [P2524/D12/T97] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplication
+ 2020-06-17 17:45:28,675 [P2524/D12/T97] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplication, found 0 (took 2ms)
+ 2020-06-17 17:45:34,916 [P2524/D12/T94] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field default
+ 2020-06-17 17:45:34,921 [P2524/D12/T94] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field min
+ 2020-06-17 17:45:34,921 [P2524/D12/T94] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field step
+ 2020-06-17 17:45:34,921 [P2524/D12/T94] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field max
+ 2020-06-17 17:45:34,925 [P2524/D12/T94] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field editor
+ 2020-06-17 17:45:34,925 [P2524/D12/T94] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field hideLabel
+ 2020-06-17 17:45:34,939 [P2524/D12/T94] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field values
+ 2020-06-17 17:45:35,008 [P2524/D12/T94] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field multiPicker
+ 2020-06-17 17:45:35,008 [P2524/D12/T94] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field onlyImages
+ 2020-06-17 17:45:35,008 [P2524/D12/T94] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field disableFolderSelect
+ 2020-06-17 17:45:35,008 [P2524/D12/T94] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field startNodeId
+ 2020-06-17 17:45:35,025 [P2524/D12/T94] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field max
+ 2020-06-17 17:45:35,049 [P2524/D12/T94] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field crops
+ 2020-06-17 17:45:35,055 [P2524/D12/T94] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field onlyImages
+ 2020-06-17 17:45:35,055 [P2524/D12/T94] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field disableFolderSelect
+ 2020-06-17 17:45:35,055 [P2524/D12/T94] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field startNodeId
+ 2020-06-17 17:46:37,777 [P2524/D12/T104] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Guide' with Id '1059' has been published.
+ 2020-06-17 17:46:41,894 [P2524/D12/T24] INFO  umbraco.content - Save Xml to file...
+ 2020-06-17 17:46:41,923 [P2524/D12/T24] INFO  umbraco.content - Saved Xml to file.
+ 2020-06-17 17:46:44,860 [P2524/D12/T34] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type guide matches a locally declared controller of type NewGood.Controllers.GuideController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2020-06-17 17:47:25,767 [P2524/D12/T44] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Guide' with Id '1059' has been published.
+ 2020-06-17 17:47:29,893 [P2524/D12/T109] INFO  umbraco.content - Save Xml to file...
+ 2020-06-17 17:47:29,899 [P2524/D12/T109] INFO  umbraco.content - Saved Xml to file.
+ 2020-06-17 17:47:31,483 [P2524/D12/T60] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type guide matches a locally declared controller of type NewGood.Controllers.GuideController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2020-06-17 17:50:26,289 [P2524/D12/T99] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Guide' with Id '1059' has been published.
+ 2020-06-17 17:50:30,409 [P2524/D12/T42] INFO  umbraco.content - Save Xml to file...
+ 2020-06-17 17:50:30,409 [P2524/D12/T42] INFO  umbraco.content - Saved Xml to file.
+ 2020-06-17 17:51:13,943 [P2524/D12/T97] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Guide' with Id '1059' has been published.
+ 2020-06-17 17:51:18,065 [P2524/D12/T24] INFO  umbraco.content - Save Xml to file...
+ 2020-06-17 17:51:18,097 [P2524/D12/T24] INFO  umbraco.content - Saved Xml to file.
+ 2020-06-17 17:52:11,578 [P2524/D12/T105] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Guide' with Id '1059' has been published.
+ 2020-06-17 17:52:15,877 [P2524/D12/T60] INFO  umbraco.content - Save Xml to file...
+ 2020-06-17 17:52:15,911 [P2524/D12/T60] INFO  umbraco.content - Saved Xml to file.
+ 2020-06-17 17:53:30,510 [P2524/D12/T32] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Guide' with Id '1059' has been published.
+ 2020-06-17 17:53:34,627 [P2524/D12/T92] INFO  umbraco.content - Save Xml to file...
+ 2020-06-17 17:53:34,633 [P2524/D12/T92] INFO  umbraco.content - Saved Xml to file.
+ 2020-06-17 17:53:41,415 [P2524/D12/T97] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type guide matches a locally declared controller of type NewGood.Controllers.GuideController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2020-06-17 17:55:18,128 [P2524/D12/T7] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type guide matches a locally declared controller of type NewGood.Controllers.GuideController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2020-06-17 17:55:52,975 [P2524/D12/T100] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Guide' with Id '1059' has been published.
+ 2020-06-17 17:55:57,101 [P2524/D12/T99] INFO  umbraco.content - Save Xml to file...
+ 2020-06-17 17:55:57,116 [P2524/D12/T99] INFO  umbraco.content - Saved Xml to file.
+ 2020-06-17 17:55:57,528 [P2524/D12/T21] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type guide matches a locally declared controller of type NewGood.Controllers.GuideController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2020-06-17 17:56:15,109 [P2524/D12/T21] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Guide' with Id '1059' has been published.
+ 2020-06-17 17:56:19,157 [P2524/D12/T97] INFO  umbraco.content - Save Xml to file...
+ 2020-06-17 17:56:19,172 [P2524/D12/T97] INFO  umbraco.content - Saved Xml to file.
+ 2020-06-17 17:56:30,294 [P2524/D12/T44] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Guide' with Id '1059' has been published.
+ 2020-06-17 17:56:34,358 [P2524/D12/T44] INFO  umbraco.content - Save Xml to file...
+ 2020-06-17 17:56:34,374 [P2524/D12/T44] INFO  umbraco.content - Saved Xml to file.
+ 2020-06-17 17:58:18,477 [P2524/D12/T98] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type guide matches a locally declared controller of type NewGood.Controllers.GuideController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
