@@ -679,3 +679,56 @@ _shutDownStack=   at System.Environment.GetStackTrace(Exception e, Boolean needF
    at System.Threading.QueueUserWorkItemCallback.System.Threading.IThreadPoolWorkItem.ExecuteWorkItem()
    at System.Threading.ThreadPoolWorkQueue.Dispatch()
    at System.Threading._ThreadPoolWaitCallback.PerformWaitCallback()
+ 2020-06-18 16:16:41,519 [P13132/D5/T63] INFO  umbraco.content - Load Xml from file...
+ 2020-06-18 16:16:41,520 [P13132/D5/T63] INFO  umbraco.content - Loaded Xml from file.
+ 2020-06-18 16:16:41,940 [P13132/D5/T63] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2020-06-18 16:16:41,941 [P13132/D5/T63] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 1ms)
+ 2020-06-18 16:16:42,026 [P13132/D5/T63] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+ 2020-06-18 16:16:42,027 [P13132/D5/T63] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 0 (took 1ms)
+ 2020-06-18 16:16:43,713 [P13132/D5/T63] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type NewGood.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2020-06-18 16:17:41,573 [P13132/D5/T60] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2020-06-17 16:17:41
+ 2020-06-18 16:18:08,198 [P13132/D5/T61] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: kasiakor, IP Address: ::1
+ 2020-06-18 16:43:13,964 [P13132/D5/T334] WARN  Umbraco.Web.UmbracoModule - Status code is 404 yet TrySkipIisCustomErrors is false - IIS will take over.
+ 2020-06-18 16:43:21,911 [P13132/D5/T66] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username kasiakor from IP address ::1
+ 2020-06-18 16:43:21,912 [P13132/D5/T66] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: kasiakor logged in from IP address ::1
+ 2020-06-18 16:43:22,109 [P13132/D5/T66] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplication
+ 2020-06-18 16:43:22,111 [P13132/D5/T66] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplication, found 0 (took 2ms)
+ 2020-06-18 16:43:31,518 [P13132/D5/T7] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Trees.TreeController
+ 2020-06-18 16:43:31,519 [P13132/D5/T7] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Trees.TreeController, found 0 (took 0ms)
+ 2020-06-18 16:43:31,521 [P13132/D5/T7] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.ITree
+ 2020-06-18 16:43:31,522 [P13132/D5/T7] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.ITree, found 0 (took 0ms)
+ 2020-06-18 16:43:31,547 [P13132/D5/T7] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.ITree
+ 2020-06-18 16:43:31,547 [P13132/D5/T7] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.ITree, found 0 (took 0ms)
+ 2020-06-18 16:43:33,868 [P13132/D5/T66] WARN  Umbraco.Web.UmbracoModule - Status code is 404 yet TrySkipIisCustomErrors is false - IIS will take over.
+ 2020-06-18 16:43:39,542 [P13132/D5/T7] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.ICacheRefresher
+ 2020-06-18 16:43:39,544 [P13132/D5/T7] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 0 (took 1ms)
+ 2020-06-18 16:43:40,031 [P13132/D5/T66] WARN  Umbraco.Web.UmbracoModule - Status code is 404 yet TrySkipIisCustomErrors is false - IIS will take over.
+ 2020-06-18 16:44:37,717 [P13132/D5/T7] WARN  Umbraco.Web.UmbracoModule - Status code is 404 yet TrySkipIisCustomErrors is false - IIS will take over.
+ 2020-06-18 16:44:52,213 [P13132/D5/T218] WARN  Umbraco.Web.UmbracoModule - Status code is 404 yet TrySkipIisCustomErrors is false - IIS will take over.
+ 2020-06-18 16:44:56,803 [P13132/D5/T218] WARN  Umbraco.Web.UmbracoModule - Status code is 404 yet TrySkipIisCustomErrors is false - IIS will take over.
+ 2020-06-18 16:44:57,827 [P13132/D5/T222] WARN  Umbraco.Web.UmbracoModule - Status code is 404 yet TrySkipIisCustomErrors is false - IIS will take over.
+ 2020-06-18 16:44:59,183 [P13132/D5/T7] WARN  Umbraco.Web.UmbracoModule - Status code is 404 yet TrySkipIisCustomErrors is false - IIS will take over.
+ 2020-06-18 16:45:05,037 [P13132/D5/T319] WARN  Umbraco.Web.UmbracoModule - Status code is 404 yet TrySkipIisCustomErrors is false - IIS will take over.
+ 2020-06-18 16:45:16,012 [P13132/D5/T313] ERROR Umbraco.Core.UmbracoApplicationBase - An unhandled exception occurred
+System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.ArgumentException: No id 2 exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(Int32 id)
+   at umbraco.settings.EditDictionaryItem.Page_Load(Object sender, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at umbraco.BasePages.BasePage.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.umbraco_settings_editdictionaryitem_aspx.ProcessRequest(HttpContext context) in c:\Users\kasia\AppData\Local\Temp\Temporary ASP.NET Files\vs\7fb14e51\6edc734f\App_Web_editdictionaryitem.aspx.a5729980.atbabf9l.0.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+ 2020-06-18 16:45:22,674 [P13132/D5/T7] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Trees.TreeController
+ 2020-06-18 16:45:22,674 [P13132/D5/T7] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Trees.TreeController, found 0 (took 0ms)
+ 2020-06-18 16:45:23,042 [P13132/D5/T7] WARN  Umbraco.Web.UmbracoModule - Status code is 404 yet TrySkipIisCustomErrors is false - IIS will take over.
+ 2020-06-18 16:45:23,092 [P13132/D5/T7] WARN  Umbraco.Web.UmbracoModule - Status code is 404 yet TrySkipIisCustomErrors is false - IIS will take over.
