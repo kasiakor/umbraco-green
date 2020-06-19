@@ -1,40 +1,60 @@
 ﻿@inherits UmbracoTemplatePage
 @{
-	Layout = "WebBase.cshtml";
+    Layout = "WebBase.cshtml";
     var searchQuery = Request.QueryString["q"];
 }
-
 <div id="fh5co-about-section">
-		<div class="container">
-			@{ Html.RenderAction("RenderTitle", "SiteLayout");}
-			<div class="row">
-				<div class="col-md-12">
-					<div class="search-container">
-                        <form action="/search/" method="GET" id="search">
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12 mx-auto">
-                                    <div class="form-group controls">
-                                        <input type="text" class="form-control col-cx-6" placeholder="Search for something...." name="q" value="" />
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 mx-auto">
-                                    <div class="form-group">
-                                        <button class="btn btn-primary search-button">Search <i class="fa fa-search"></i></button>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 mx-auto">
-                                    @if (!string.IsNullOrEmpty(searchQuery))
-                                    {
-                                        var results = Umbraco.ContentQuery.Search(searchQuery);
-                                        long resultCount = results != null && results.Any() ? results.Count() : 0;
-                                        <p>Your search for <strong>@searchQuery</strong> found <strong>@resultCount</strong> result@(resultCount == 1 ? null : "s")</p>
-                                    }
+    <div class="container">
+        @{ Html.RenderAction("RenderTitle", "SiteLayout");}
+        <div class="row">
+            <div class="col-md-12">
+                <div class="search-container">
+                    <form action="/search/" method="GET" id="search">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 mx-auto">
+                                <div class="form-group controls">
+                                    <input type="text" class="form-control col-cx-6" placeholder="Search for something...." name="q" value="" />
                                 </div>
                             </div>
-                        </form>
-                    </div>
-				</div>
-			</div>
-		</div>
-	</div>
+                            <div class="col-lg-12 col-md-12 mx-auto">
+                                <div class="form-group">
+                                    <button class="btn btn-primary search-button">Search <i class="fa fa-search"></i></button>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 mx-auto">
+                                @if (!string.IsNullOrEmpty(searchQuery))
+                                {
+                                    var results = Umbraco.ContentQuery.Search(searchQuery);
+                                    long resultCount = results != null && results.Any() ? results.Count() : 0;
+                                    <p>Your search for <strong>@searchQuery</strong> found <strong>@resultCount</strong> result@(resultCount == 1 ? null : "s")</p>
 
+                                       if (resultCount > 0)
+
+                                        {
+                                            foreach (var result in results)
+                                            {
+                                                var title = result.GetPropertyValue<string>("title");
+                                                var subtitle = result.GetPropertyValue<string>("subtitle");
+                                                <div>
+                                                    <a href="@result.Url">
+                                                        <h1 class="post-title">
+                                                            @(!string.IsNullOrEmpty(title) ? title : result.Name)
+                                                        </h1>
+                                                        
+                                                            @if (!string.IsNullOrEmpty(subtitle))
+                                                            {
+                                                        <h3 class="post-subtitle">@Html.Raw(@subtitle)</h3>
+                                                            }   
+                                                    </a>
+                                                </div>
+                                            }
+                                        }
+                                }
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
