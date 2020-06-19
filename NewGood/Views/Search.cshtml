@@ -1,6 +1,7 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+﻿@inherits UmbracoTemplatePage
 @{
 	Layout = "WebBase.cshtml";
+    var searchQuery = Request.QueryString["q"];
 }
 
 <div id="fh5co-about-section">
@@ -22,7 +23,12 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12 mx-auto">
-                                    <p>There are no search results</p>
+                                    @if (!string.IsNullOrEmpty(searchQuery))
+                                    {
+                                        var results = Umbraco.ContentQuery.Search(searchQuery);
+                                        long resultCount = results != null && results.Any() ? results.Count() : 0;
+                                        <p>Your search for <strong>@searchQuery</strong> found <strong>@resultCount</strong> result@(resultCount == 1 ? null : "s")</p>
+                                    }
                                 </div>
                             </div>
                         </form>
