@@ -19,7 +19,7 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "11239c2ea16d860a")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "efeee594d99dcc76")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 namespace Umbraco.Web.PublishedContentModels
@@ -999,6 +999,307 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Static getter for Banner Intro</summary>
 		public static string GetBannerIntro(IBannerControls that) { return that.GetPropertyValue<string>("bannerIntro"); }
+	}
+
+	// Mixin content Type 1106 with alias "disabaleControls"
+	/// <summary>Disable Controls</summary>
+	public partial interface IDisabaleControls : IPublishedContent
+	{
+		/// <summary>Disabled</summary>
+		bool UmbracoNaviHide { get; }
+	}
+
+	/// <summary>Disable Controls</summary>
+	[PublishedContentModel("disabaleControls")]
+	public partial class DisabaleControls : PublishedContentModel, IDisabaleControls
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "disabaleControls";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public DisabaleControls(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<DisabaleControls, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Disabled: Tick the box, if you want to disable this item
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return GetUmbracoNaviHide(this); }
+		}
+
+		/// <summary>Static getter for Disabled</summary>
+		public static bool GetUmbracoNaviHide(IDisabaleControls that) { return that.GetPropertyValue<bool>("umbracoNaviHide"); }
+	}
+
+	// Mixin content Type 1107 with alias "slideTitleControls"
+	/// <summary>Slide Title Controls</summary>
+	public partial interface ISlideTitleControls : IPublishedContent
+	{
+		/// <summary>Slide Title</summary>
+		string SlideTitle { get; }
+	}
+
+	/// <summary>Slide Title Controls</summary>
+	[PublishedContentModel("slideTitleControls")]
+	public partial class SlideTitleControls : PublishedContentModel, ISlideTitleControls
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "slideTitleControls";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public SlideTitleControls(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<SlideTitleControls, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Slide Title: Enter the title for this slide
+		///</summary>
+		[ImplementPropertyType("slideTitle")]
+		public string SlideTitle
+		{
+			get { return GetSlideTitle(this); }
+		}
+
+		/// <summary>Static getter for Slide Title</summary>
+		public static string GetSlideTitle(ISlideTitleControls that) { return that.GetPropertyValue<string>("slideTitle"); }
+	}
+
+	// Mixin content Type 1108 with alias "slideSubtitleControls"
+	/// <summary>Slide Subtitle Controls</summary>
+	public partial interface ISlideSubtitleControls : IPublishedContent
+	{
+		/// <summary>Slide Subtitle</summary>
+		string SlideSubtitle { get; }
+	}
+
+	/// <summary>Slide Subtitle Controls</summary>
+	[PublishedContentModel("slideSubtitleControls")]
+	public partial class SlideSubtitleControls : PublishedContentModel, ISlideSubtitleControls
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "slideSubtitleControls";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public SlideSubtitleControls(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<SlideSubtitleControls, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Slide Subtitle: Enter the subtitle for the slide
+		///</summary>
+		[ImplementPropertyType("slideSubtitle")]
+		public string SlideSubtitle
+		{
+			get { return GetSlideSubtitle(this); }
+		}
+
+		/// <summary>Static getter for Slide Subtitle</summary>
+		public static string GetSlideSubtitle(ISlideSubtitleControls that) { return that.GetPropertyValue<string>("slideSubtitle"); }
+	}
+
+	// Mixin content Type 1109 with alias "slideImageControls"
+	/// <summary>Slide Image Controls</summary>
+	public partial interface ISlideImageControls : IPublishedContent
+	{
+		/// <summary>Slide Image</summary>
+		string SlideImage { get; }
+	}
+
+	/// <summary>Slide Image Controls</summary>
+	[PublishedContentModel("slideImageControls")]
+	public partial class SlideImageControls : PublishedContentModel, ISlideImageControls
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "slideImageControls";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public SlideImageControls(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<SlideImageControls, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Slide Image: Add an image for the slide
+		///</summary>
+		[ImplementPropertyType("slideImage")]
+		public string SlideImage
+		{
+			get { return GetSlideImage(this); }
+		}
+
+		/// <summary>Static getter for Slide Image</summary>
+		public static string GetSlideImage(ISlideImageControls that) { return that.GetPropertyValue<string>("slideImage"); }
+	}
+
+	// Mixin content Type 1110 with alias "slideLinkControls"
+	/// <summary>Slide Link Controls</summary>
+	public partial interface ISlideLinkControls : IPublishedContent
+	{
+		/// <summary>Slide Link</summary>
+		Newtonsoft.Json.Linq.JArray SlideLink { get; }
+	}
+
+	/// <summary>Slide Link Controls</summary>
+	[PublishedContentModel("slideLinkControls")]
+	public partial class SlideLinkControls : PublishedContentModel, ISlideLinkControls
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "slideLinkControls";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public SlideLinkControls(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<SlideLinkControls, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Slide Link: Add a link for this slide
+		///</summary>
+		[ImplementPropertyType("slideLink")]
+		public Newtonsoft.Json.Linq.JArray SlideLink
+		{
+			get { return GetSlideLink(this); }
+		}
+
+		/// <summary>Static getter for Slide Link</summary>
+		public static Newtonsoft.Json.Linq.JArray GetSlideLink(ISlideLinkControls that) { return that.GetPropertyValue<Newtonsoft.Json.Linq.JArray>("slideLink"); }
+	}
+
+	/// <summary>Carousel Slide</summary>
+	[PublishedContentModel("carouselSlide")]
+	public partial class CarouselSlide : PublishedContentModel, IDisabaleControls, ISlideImageControls, ISlideLinkControls, ISlideSubtitleControls, ISlideTitleControls
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "carouselSlide";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public CarouselSlide(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<CarouselSlide, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Disabled: Tick the box, if you want to disable this item
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return DisabaleControls.GetUmbracoNaviHide(this); }
+		}
+
+		///<summary>
+		/// Slide Image: Add an image for the slide
+		///</summary>
+		[ImplementPropertyType("slideImage")]
+		public string SlideImage
+		{
+			get { return SlideImageControls.GetSlideImage(this); }
+		}
+
+		///<summary>
+		/// Slide Link: Add a link for this slide
+		///</summary>
+		[ImplementPropertyType("slideLink")]
+		public Newtonsoft.Json.Linq.JArray SlideLink
+		{
+			get { return SlideLinkControls.GetSlideLink(this); }
+		}
+
+		///<summary>
+		/// Slide Subtitle: Enter the subtitle for the slide
+		///</summary>
+		[ImplementPropertyType("slideSubtitle")]
+		public string SlideSubtitle
+		{
+			get { return SlideSubtitleControls.GetSlideSubtitle(this); }
+		}
+
+		///<summary>
+		/// Slide Title: Enter the title for this slide
+		///</summary>
+		[ImplementPropertyType("slideTitle")]
+		public string SlideTitle
+		{
+			get { return SlideTitleControls.GetSlideTitle(this); }
+		}
 	}
 
 	/// <summary>Folder</summary>

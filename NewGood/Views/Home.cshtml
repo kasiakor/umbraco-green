@@ -9,6 +9,6 @@
 
 @{  Html.RenderAction("RenderFeatured", "Home");}
 
-@{  Html.RenderAction("RenderBlog", "Home");}
+ @{ Html.RenderAction("RenderPostList", "Blog", new { numberOfItems = 3 });}
 
 @{  Html.RenderAction("RenderTestimonials", "Home");}
